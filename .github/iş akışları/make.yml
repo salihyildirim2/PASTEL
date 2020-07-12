@@ -1,0 +1,104 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: configure
+      run: ./configure
+    - name: make
+      run: make
+    - name: make check
+      run: make check
+    - name: make distcheck
+      run: make distcheck
+- name: Setup Go ortamı
+  kullanır: actions/setup-go@v2.1.0
+  ile:
+    # İndirilecek sürümü (gerekirse) ve kullanın. Semver özellikleri ve aralıklarını destekler.
+    go-sürüm: # isteğe bağlı
+    # Sadece kararlı sürümlerin indirilip indirilmeyeceği
+    kararlı: # isteğe bağlı, varsayılan true
+    # Go-versiyonlarından düğüm dağılımlarını çekmek için kullanılır. Bir varsayılan değer olduğundan, bu genellikle kullanıcı tarafından sağlanmaz.
+    jeton: # isteğe bağlı, varsayılan $ {{github.token}}
+    - isim: Java JDK Kurulumu
+  kullanır: actions/setup-java@v1.3.0
+  ile:
+    # Yolda kullanılabilecek Java sürümü. Tam veya semver Java sürümünü veya 1.x sözdizimini alır (örneğin 1.8 => Java 8.x)
+    java-version: 
+    # Paket türü (jre, jdk, jdk + fx)
+    java paketi: # isteğe bağlı, varsayılan jdk
+    # Paketin mimarisi (x86, x64).
+    mimari: # isteğe bağlı, varsayılan x64
+    # Sıkıştırılmış JDK'nın bulunduğu yol. Yol, kaynak havuzunuzda veya aracıdaki yerel bir yol olabilir.
+    jdkDosya: # isteğe bağlı
+    Pom.xml dosyasındaki distributionManagement veri havuzunun kimliği. Varsayılan `github`
+    sunucu kimliği: # isteğe bağlı
+    # Apache Maven deposunda kimlik doğrulaması için kullanıcı adı için ortam değişkeni adı. Varsayılan $ GITHUB_ACTOR
+    sunucu-kullanıcı adı: # isteğe bağlı
+    # Apache Maven deposunda kimlik doğrulaması için parola veya simge için ortam değişkeni adı. Varsayılan $ GITHUB_TOKEN
+    sunucu şifresi: # isteğe bağlı
+    # Settings.xml dosyasının yazılacağı yol. Varsayılan ~ / .m2'dir.
+    ayarlar yolu: # isteğe bağlı- name: Eski Sorunları Kapat
+  kullanır: actions/stale@v3.0.7
+  ile:
+    # Depo için simge. `{{Secrets.GITHUB_TOKEN}}` kullanılarak aktarılabilir.
+    Repo-belirteç: 
+    # Sorunu etiketlerken gönderilecek mesaj. Hiçbiri sağlanmazsa, sorunları eski olarak işaretlemez.
+    eski sayı mesajı: # isteğe bağlı
+    # Etiketleme sırasında pr'de yayınlanacak mesaj. Hiçbiri sağlanmadıysa, çekme isteklerini eski olarak işaretlemez.
+    eski-pr-mesajı: # isteğe bağlı
+    # Bir sorunun bayat olarak işaretlenmesinden önceki gün sayısı.
+    eski günler: # isteğe bağlı, varsayılan 60
+    # Bir sorunu kapatmak veya eski olarak işaretlendikten sonra istek çekmek için beklenecek gün sayısı. Eski sayıları asla kapatmamak için -1 olarak ayarlayın.
+    kapanış gününden önce: # isteğe bağlı, varsayılan 7'dir
+    # Bir sorun eskiyken uygulanacak etiket.
+    eski sayı etiketi: # isteğe bağlı, varsayılan Eski
+    # Bir sorunun bayat olarak işaretlenmesinden muaf tutulduğunda uygulanacak etiketler. Birden çok etiketi virgülle ayırın (örn. "Etiket1, etiket2")
+    muaf sayı etiketleri: # isteğe bağlı, varsayılan 
+    # Bir çekme isteği eski olduğunda uygulanacak etiket.
+    stale-pr-label: # isteğe bağlı, varsayılan Stale
+    # Bir çekme isteği eski olarak işaretlenmekten muaf tutulduğunda uygulanacak etiketler. Birden çok etiketi virgülle ayırın (örn. "Etiket1, etiket2")
+    exempt-pr-etiketleri: # isteğe bağlı, varsayılan 
+    # Yalnızca bu etiketlerin tümüyle ilgili sorunlar veya çekme istekleri eskiyse kontrol edilir. Varsayılan olarak `[]` (devre dışı) ve virgülle ayrılmış bir etiket listesi olabilir.
+    only-labels: # isteğe bağlı, varsayılan 
+    # Hız sınırlamasını kontrol etmek için kullanılan, çalışma başına maksimum işlem sayısı.
+    çalıştırma başına işlem: # isteğe bağlı, varsayılan 30
+    # Güncellendiğinde veya yorum yapıldığında eski etiketleri sorunlardan kaldırın.
+    güncellendiğinde kaldır-bayat: # isteğe bağlı, varsayılan değer true
+    # İşlemciyi canlı sorunlarda herhangi bir işlem yapmadan hata ayıklama modunda çalıştırın.
+    yalnızca hata ayıklama: # isteğe bağlı
+    # Sorun alma veya istek çekme emri. Varsayılanı false seçeneğidir, bu azalan
+    artan: isteğe bağlı #- adı: .NET Core SDK'sını kurun
+  kullanır: actions/setup-dotnet@v1.5.0
+  ile:
+    # Kullanılacak SDK sürümü. Örnekler: 2.2.104, 3.1, 3.1.x
+    dotnet sürümü: # isteğe bağlı
+    # Kimlik doğrulamasını ayarlamak için isteğe bağlı paket kaynağı. Repo'nun kökünde varolan herhangi bir NuGet.config dosyasına danışır ve ClearTextPassword olarak NUGET_AUTH_TOKEN ortam değişkenini kullanarak geçici bir NuGet.config dosyası sağlar
+    kaynak-url: # isteğe bağlı
+    # GitHub Paket Kayıt Defteri kuruluşlarından / geçerli depo sahibi dışındaki kullanıcılardan gelen paketleri kullanmak için isteğe bağlı SAHİBİ. Yalnızca kaynak URL'de bir GPR URL'si de sağlandıysa kullanılır
+    sahip: # isteğe bağlı
+    # İsteğe bağlı NuGet.config konumu, NuGet.config dosyanız deponun kök dizininde değilse.
+    yapılandırma dosyası: # isteğe bağlı
+    # Onaylanmadı. Bunun yerine dotnet sürümünü kullanın. 1 Ekim 2019'dan sonra desteklenmeyecek
+    - isim: İlk etkileşim
+  kullanır: actions/first-interaction@v1.0.0
+  ile:
+    # Repo için belirteç. {{Secrets.GITHUB_TOKEN}} kullanılarak aktarılabilir
+    Repo-belirteç: 
+    # Bireylerin ilk sayısıyla ilgili yorum yapmak için yorum yapın
+    sorun mesajı: # isteğe bağlı
+    # Bir birey ilk çekme isteği üzerine yorum yapmak için yorum
+    pr-message: # isteğe bağlı
+    sürüm: # isteğe bağlı
+    
+    
