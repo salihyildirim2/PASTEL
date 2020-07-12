@@ -1,2 +1,0 @@
-- name: Kurulum gcloud ortamı
-  kullanır: GoogleCloudPlatform/github-actions@0.1.2
