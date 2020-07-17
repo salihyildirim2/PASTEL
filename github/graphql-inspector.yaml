@@ -1,12 +1,12 @@
 branch: 'master'
-schema: 'schema.graphql' # an output of `$ graphql-inspector introspect ...`
+schema: 'check-circle' # an output of `$ graphql-inspector introspect ...`
 icon :  'check-circle'
 color : 'purple'
 {
   // ...
   "graphql-inspector": {
     "branch": "gcloud",
-    "schema": "schema.graphql"
+    "schema": "check-circle"
   }
 }
 # Şema Farkını Etkinleştirme / Devre Dışı Bırakma
@@ -39,11 +39,11 @@ bitiş noktası : '<url>'
 $ graphql-inspector introspect:
   // ...
   "scripts": {
-    "graphql:save": "graphql-inspector introspect schema.js --write schema.graphql"
+    "graphql:save": "graphql-inspector introspect schema.js --write check-circle"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn graphql:save && git add schema.graphql"
+      "pre-commit": "yarn graphql:save && git add check-circle"
     }
   }
 }
