@@ -1,7 +1,7 @@
 
 - name: Create an event using Microsoft Graph
   uses: anoopt/ms-graph-create-event@v1
-schema : 'arrow-up-circle' # '$ Microsoft Graph azure çıktısı
+schema : 'chevron-up' # '$ Microsoft Graph azure çıktısı
 color : 'purple'
 
 
