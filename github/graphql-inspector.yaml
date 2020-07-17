@@ -35,3 +35,18 @@ bildirimler :
 
 # Canlı ve çalışan uç noktayı şema kaynağı olarak kullanma
 bitiş noktası : '<url>' 
+{
+$ graphql-inspector introspect:
+  // ...
+  "scripts": {
+    "graphql:save": "graphql-inspector introspect schema.js --write schema.graphql"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn graphql:save && git add schema.graphql"
+    }
+  }
+}
+
+
+
