@@ -5,7 +5,7 @@ color : 'purple'
 {
   // ...
   "graphql-inspector": {
-    "branch": "master",
+    "branch": "gcloud",
     "schema": "schema.graphql"
   }
 }
