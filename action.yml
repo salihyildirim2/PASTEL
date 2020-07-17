@@ -1,4 +1,4 @@
-name: 'CRONATİATİA'
+name: 'Pastel'
 description: 'Trigger a run in Azure pipelines' 
 inputs:
   azure-devops-project-url:
