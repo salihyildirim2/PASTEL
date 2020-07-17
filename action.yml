@@ -1,4 +1,4 @@
-name: 'BELİNDA'
+name: 'EFLACEST'
 description: 'Trigger a run in Azure pipelines' 
 inputs:
   azure-devops-project-url:
