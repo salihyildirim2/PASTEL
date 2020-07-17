@@ -1,1 +1,3 @@
-
+şube : 'usta' 
+schema : 'arrow-up-circle' # '$ graphql-müfettiş introspect ...' çıktısı  
+color : 'purple'
