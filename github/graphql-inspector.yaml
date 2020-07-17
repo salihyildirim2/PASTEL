@@ -9,3 +9,29 @@ color : 'purple'
     "schema": "schema.graphql"
   }
 }
+# Şema Farkını Etkinleştirme / Devre Dışı Bırakma
+diff : true # varsayılan olarak etkindir 
+
+# Şema Farkını Özelleştirme
+fark :
+  # Çekme İsteği ek açıklamaları (varsayılan olarak etkindir)
+  ek açıklamalar : doğru 
+  # Değişiklikleri bozmada başarısız veya devre dışı bırakıldığında BAŞARI zorla (varsayılan olarak etkindir)
+  failOnBreaking : true 
+  # Tespit edilen değişikliklerin listesini kesin ve bir Çekme İsteğinin kabul edilip edilmeyeceğine karar verin
+  kesme noktası : '<url>' 
+
+# Bildirimler (varsayılan olarak devre dışıdır)
+bildirimler :
+  gevşeklik : 'webhook url' 
+  uyumsuzluk : 'webhook url' 
+  webhook : 'webhook url' 
+
+# Ana / hedef şubeniz
+şube : 'usta' 
+
+# Şema dosyasının yolu
+şema : 'schema.graphql' 
+
+# Canlı ve çalışan uç noktayı şema kaynağı olarak kullanma
+bitiş noktası : '<url>' 
