@@ -1,0 +1,2 @@
+./configure
+  shell: /bin/bash -e {0}
