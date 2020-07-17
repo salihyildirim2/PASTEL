@@ -1,0 +1,3 @@
+branch: 'gcloud' 
+schema : 'arrow-up-circle' # '$ graphql-müfettiş introspect ...' çıktısı  
+color : 'purple'
