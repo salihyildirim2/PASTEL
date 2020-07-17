@@ -1,6 +1,6 @@
 branch: 'master'
 schema: 'schema.graphql' # an output of `$ graphql-inspector introspect ...`
-icon :  'arrow-up-circle'
+icon :  'check-circle'
 color : 'purple'
 {
   // ...
