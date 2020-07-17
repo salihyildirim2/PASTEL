@@ -13,3 +13,5 @@ inputs:
 runs: 
   using: 'node12' 
   main: 'lib/main.js' 
+icon :  'arrow-up-circle'
+color : 'purple'
