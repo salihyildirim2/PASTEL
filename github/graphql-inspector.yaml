@@ -1,2 +1,11 @@
 branch: 'master'
 schema: 'schema.graphql' # an output of `$ graphql-inspector introspect ...`
+icon :  'arrow-up-circle'
+color : 'purple'
+{
+  // ...
+  "graphql-inspector": {
+    "branch": "master",
+    "schema": "schema.graphql"
+  }
+}
