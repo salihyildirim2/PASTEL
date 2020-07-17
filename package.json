@@ -9,4 +9,11 @@ npm publish [<tarball>|<folder>] [--tag <tag>] [--access <public|restricted>] [-
 
 Publishes '.' if no argument supplied
 Sets tag 'latest' if no --tag specified
+{
+  // ...
+  "graphql-denetçisi" : { 
+    "şube" : "ana" , 
+    "schema" : "schema.graphql" 
+  }
+}
 closed
